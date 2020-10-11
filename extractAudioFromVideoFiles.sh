@@ -17,10 +17,10 @@ OUTPUTFILEEXTENSION=""
 
 USAGE="
 
-This will crawl through the current directory and EXTRACT the audio track of the given video files.
+This will crawl through the current directory and EXTRACT the audio track of the given video files. Provide it with the video filename extension that you want it to search for and process. Examples are mp4 or mkv
 
 Usage: 
-    extractAudioFromVideoFiles.sh inputFileExtension outputFileExtension directoryToProcess
+    extractAudioFromVideoFiles.sh inputFileExtension directoryToProcess
     
 Don't put periods before the file extensions.
 
