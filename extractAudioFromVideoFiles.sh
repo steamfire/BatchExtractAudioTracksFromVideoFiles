@@ -71,6 +71,6 @@ do
 #  echo -n "$OUTPUTFILESIMPLENAME"
 #  echo -e "\n"
 
-  ffmpeg -loglevel quiet -i "${FILENAME}" -vn -acodec copy -metadata title="$INPUTFILESIMPLENAME" "${OUTFILE}"   
+  ffmpeg -loglevel quiet -i "${FILENAME}" -vn -acodec copy -metadata title="$INPUTFILESIMPLENAME" -n "${OUTFILE}"   
 
 done
