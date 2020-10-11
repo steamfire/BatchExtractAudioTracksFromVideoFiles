@@ -2,20 +2,16 @@
 # extractAudioFromVideoFiles.sh
 #Requires FFMPEG
 
-# Change XXX to whatever the appropriate extension is to be processed
-
-
 
 #Gets the directory to use from the first argument to this script
 
 INPUTFILEEXTENSION="$1"
-
 DIRECTORYTOCRAWL="$2"
-
-OUTPUTFILEEXTENSION=""
 
 
 USAGE="
+extractAudioFromVideoFiles
+Dan Bowen
 
 This will crawl through the current directory and EXTRACT the audio track of the given video files. Provide it with the video filename extension that you want it to search for and process. Examples are mp4 or mkv
 
@@ -24,12 +20,11 @@ Usage:
     
 Don't put periods before the file extensions.
 
-
-
+NOTE: AAC audio files will be named with the extension of ".m4a" which iTunes prefers.
 "
 
 if [ $# -ne 2 ] ; then
-    echo $USAGE
+    echo -e $USAGE
     exit 1;
 fi
 
