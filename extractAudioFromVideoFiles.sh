@@ -1,6 +1,6 @@
 #!/bin/zsh
 # extractAudioFromVideoFiles.sh
-#Requires FFMPEG
+# Requires FFMPEG and FFPROBE
 
 
 #Gets the directory to use from the first argument to this script
@@ -10,25 +10,31 @@ DIRECTORYTOCRAWL="$2"
 
 
 USAGE="
-extractAudioFromVideoFiles
-Dan Bowen
-
-This will crawl through the current directory and EXTRACT the audio track of the given video files. Provide it with the video filename extension that you want it to search for and process. Examples are mp4 or mkv
 
 Usage: 
+    
+    
     extractAudioFromVideoFiles.sh inputFileExtension directoryToProcess
     
-Don't put periods before the file extensions.
+    Don't put a period before the file extensions. 
+    * EXECUTE THIS COMMAND IN DIRECTORY WHERE THE MKV FILES ARE STORED *
 
-NOTE: AAC audio files will be named with the extension of ".m4a" which iTunes prefers.
+This will crawl through the current directory and EXTRACT the audio track of the given 
+video files. Provide it with the video filename extension that you want it to search for
+ and process. Examples are mp4 or mkv .  This command needs to be run from the directory 
+ that the mkv files are in
+
+ NOTE: AAC audio files will be named with the extension of ".m4a" which iTunes prefers.
+
+Dan Bowen MIT License
 "
 
+#check that the user has entered two arguments (hopefully the extension and directory),
+#  otherwise print the usage statement.
 if [ $# -ne 2 ] ; then
     echo -e $USAGE
     exit 1;
 fi
-
-
 
 
 #Iterates through each file
